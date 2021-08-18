@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dogegram</title>
-    <link rel="icon" href="https://assets.dogegram.xyz/favicon.ico" />
+    <link rel="icon" href="https://assets.dogegram.xyz/favicon.ico">
     <meta property="og:description" content="New Cool Social Network, share and stay connected!">
     <meta property="og:title" content="Dogegram">
-    <meta name="description" content="New Cool Social Network, share and stay connected!"/>
-    <meta name="theme-color" content="#ffc107" />
+    <meta name="description" content="New Cool Social Network, share and stay connected!">
+    <meta name="theme-color" content="#ffc107">
 
     <!--Inter UI font-->
     <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
@@ -20,11 +20,54 @@
 
     <!-- Bootstrap CSS / Color Scheme -->
     <link rel="stylesheet" href="css/default.css" id="theme-color">
+    <style>
+        .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.code {
+color:#a9a9a9
+}
+    </style>
 </head>
-<body data-new-gr-c-s-check-loaded="14.1010.0" data-gr-ext-installed="">
+<body data-new-gr-c-s-check-loaded="14.1026.0" data-gr-ext-installed="">
 
 <!--navigation-->
-<section class="smart-scroll scrolling">
+<section class="smart-scroll">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark">
             <a class="navbar-brand heading-black" href="index.html">
@@ -39,8 +82,8 @@
     <div class="container">
         <div class="row vh-md-100">
             <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
-                <h1 class="heading-black text-capitalize">Be Social Without Being Tracked - Dogegram</h1>
-                <p class="lead py-3">We don't track people across the web, thats not our business</p>
+                <h1 class="heading-black text-capitalize">a cool, new social media that respects privacy</h1>
+                <p class="lead py-3">so are you ready to have fun?</p>
                 <a href="https://twitter.com/DogegramHQ" class="btn btn-primary d-inline-flex flex-row align-items-center">Coming Soon, Stay Tuned On Twitter<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ml-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
@@ -100,9 +143,17 @@
             </div>
         </div>
         <div class="row mt-6">
-            <div class="col-md-6 mr-auto">
-                <h2>Social Media Isen't Meant To Track People</h2>
-                <p class="mb-5">Its for sharing feeling, happiness, joy and to know others</p>
+            <div style="
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+">
+                <h2>And It's Free!</h2>
+                <p class="mb-5">For you and everybody.</p>
                 <a href="#" class="btn btn-light">Feel Freedom.</a>
             </div>
         </div>
@@ -114,9 +165,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto text-center">
-                <h2 class="text-white heading-black">Choose your pricing plan.</h2>
-                <p class="text-light lead">Did you just think this would all cost? <br>
-    No, Not at all. This is human's right to be social without being tracked.</p>
+                <h2 class="text-white heading-black">Really? How do you earn then?</h2>
+                <p class="text-light lead">We just earn by the same method Facebook, Instagram, Twitter does, by showing ads.<br>Just Not by thinking what ads to show ;)</p>
             </div>
         </div>
         <!--pricing tables-->
@@ -124,9 +174,9 @@
         
         <div class="row mt-5">
             <div class="col-md-8 col-12 divider top-divider mx-auto pt-5 text-center">
-                <h3>Free Forever</h3>
-                <p class="mb-4">We know people love free stuff</p>
-                <button class="btn btn-primary">Coming soon!</button>
+                <h3>Currently we don't have many users and advertisers to show ads, if you help us it would be really great and we can keep this running :)</h3>
+                <p class="mb-4">If you can donate us it would be really great.</p>
+                <button class="btn btn-primary" id="cryptoBtn">Donate with crypto (DOGEcoin also, ofc)</button>
             </div>
         </div>
     </div>
@@ -213,9 +263,46 @@
 </footer>
 
 <!--scroll to top-->
-<div class="scroll-top active">
+<div class="scroll-top">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
-</div>
+</div><div id="cryptoModal" class="modal" style="display: none;">
+
+  <div class="modal-content">
+    <span class="close">×</span>
+    <p>Crypto wallets</p>
+	<h3>DOGE: <code class="code">DTB8bZk1EAekDjv1LNSKi7u4UheQbkmsM1</code></h3>
+	<h3>BTC: <code class="code">bc1qn52x8plrfahc2deswj5s7g8xayhcwkxzhvwc53</code></h3>
+	<h3>ETH: <code class="code">DTB8bZk1EAekDjv1LNSKi7u4UheQbkmsM1</code></h3>
+	<h3>USDC: <code class="code">DTB8bZk1EAekDjv1LNSKi7u4UheQbkmsM1</code></h3>
+    <h3>You can send us any crypto if you use Coinbase wallet, our username is <code class="code">@hrichikm</code></h3>
+    
+        <p>For transperency, our username is public, you can search check our wallets in blockchains.</p>
+
+  </div>
+
+</div><script>
+var modal = document.getElementById("cryptoModal");
+
+var btn = document.getElementById("cryptoBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -225,6 +312,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="js/scripts.js"></script>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8c738a80cbb44dbbacfb0c59028cb94c"}'></script><!-- End Cloudflare Web Analytics -->
-
-</body></html>
+    </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
